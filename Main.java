@@ -1,19 +1,32 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
 
-        Moto moto1 = new Moto();
-        Moto moto2 = new Moto("YZ","Yamaha","rojo",9455.99,350);
+            PerfilMedico perfil = new PerfilMedico("","","",0,0,0,0.0,0.0);
 
-        moto1.cilindraje= 300;
-        moto1.modelo= "EXC";
-        moto1.marca= "KTM";
-        moto1.precio= 9999.99;
-        moto1.color= "Naranja";
+                String nombre = JOptionPane.showInputDialog("Ingrese su primer nombre:");
+                String apellido = JOptionPane.showInputDialog("Ingrese su apellido:");
+                String sexo = JOptionPane.showInputDialog("Ingrese su sexo (M/F):");
+                int dia = Integer.parseInt(JOptionPane.showInputDialog("Día de nacimiento:"));
+                int mes = Integer.parseInt(JOptionPane.showInputDialog("Mes de nacimiento:"));
+                int anio = Integer.parseInt(JOptionPane.showInputDialog("Año de nacimiento:"));
+                double altura = Double.parseDouble(JOptionPane.showInputDialog("altura:"));
+                double peso = Double.parseDouble(JOptionPane.showInputDialog("Peso:"));
 
 
-        moto1.imprimir();
-        moto2.imprimir();
+                perfil.setPrimerNombre(nombre);
+                perfil.setApellido(apellido);
+                perfil.setSexo(sexo);
+                perfil.setDiaNacimiento(dia);
+                perfil.setMesNacimiento(mes);
+                perfil.setAnioNacimiento(anio);
+                perfil.setAltura(altura);
+                perfil.setPeso(peso);
+
+                JOptionPane.showMessageDialog(null, perfil.detallesPaciente(), "Perfil Médico", JOptionPane.INFORMATION_MESSAGE);
+
+
+
     }
 }
